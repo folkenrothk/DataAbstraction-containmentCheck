@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "containmentcheck"
+version = "0.1.0"
+description = ""
+authors = ["Gregory M. Kapfhammer <gkapfham@allegheny.edu>"]
+
+[tool.poetry.scripts]
+containmentcheck = "containmentcheck.main:cli"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+typer = {extras = ["all"], version = "^0.3.2"}
+rich = "^10.9.0"
+pyinstrument = "^4.0.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^21.8b0"
+taskipy = "^1.8.1"
+flake8 = "^3.9.2"
+pydocstyle = "^6.1.1"
+pylint = "^2.10.2"
+mypy = "^0.910"
+
+[tool.taskipy.tasks]
+black = { cmd = "black containmentcheck --check", help = "Run the black checks for source code format" }
+flake8 = { cmd = "flake8 containmentcheck", help = "Run the flake8 checks for source code documentation" }
+mypy = { cmd = "poetry run mypy containmentcheck", help = "Run the mypy type checker for potential type errors" }
+pydocstyle = { cmd = "pydocstyle containmentcheck", help = "Run the pydocstyle checks for source code documentation" }
+pylint = { cmd = "pylint containmentcheck", help = "Run the pylint checks for source code documentation" }
+all = "task black && task flake8 && task pydocstyle && task pylint && task mypy"
+lint = "task black && task flake8 && task pydocstyle && task pylint"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
