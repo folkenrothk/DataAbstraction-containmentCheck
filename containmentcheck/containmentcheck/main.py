@@ -22,25 +22,36 @@ console = Console()
 
 class ContainmentCheckApproach(str, Enum):
     """Define the name for the approach for performing containment checking of structured types."""
-    # TODO: define the three different approaches for containment checking
+    # define the three different approaches for containment checking
+    list = "list"
+    tuple = "tuple"
+    set = "set"
+
 
 
 def human_readable_boolean(answer: bool) -> str:
     """Produce a human-readable Yes or No for a boolean value of True or False."""
-    # TODO: return "Yes" when the provided answer is True
-    # TODO: return "No" when the provided answer is False
+    # return "Yes" when the provided answer is True
+    if answer is True:
+        return "Yes"
+    # return "No" when the provided answer is False
+    elif answer is False:
+        return "No"
 
 
 def generate_random_number(maximum: int, exceed: bool = False) -> int:
-    """Generate a random list defined by the size."""
-    # TODO: start with a random value that is one greater
+    """Generate a random number defined by the maximum."""
+    # start with a random value that is one greater
     # than the maximum, which is helpful when benchmarking
     # a containment algorithm for a value not in the container
-    # TODO: generate a random value in consideration of a maximum
+    randomNumber = maximum + 1
+    # generate a random value in consideration of a maximum
     # only take this step when the exceed variable is False
-    # TODO: return the randomly generated number of the value
-    # that exceeds the specified maximum value
-
+    if exceed is False:
+        return random.randint(1, maximum + 1)
+    # return the randomly generated number of the value that exceeds the specified maximum value
+    else:
+        return randomNumber
 
 def generate_random_container(
     size: int,
@@ -48,47 +59,54 @@ def generate_random_container(
     make_tuple: bool = False,
 ) -> Union[List[int], Tuple[int, ...]]:
     """Generate a random list defined by the size."""
-    # TODO: generate a list of random values for a specific size
-    # and with a number up to a specific maximum
-    # TODO: convert the list to a tuple
-    # only when the make_tuple boolean variable is True
-    # TODO: return the randomly generated container of values
+    # generate a list of random values for a specific size and with a number up to a specific maximum
+    randomList = []
+    for number in range(0, size):
+        number = random.randint(0, maximum)
+        randomList.append(number)
+    # convert the list to a tuple only when the make_tuple boolean variable is True
+    if make_tuple is True:
+        return tuple(randomList)
+    # return the randomly generated container of values
+    else: 
+        return randomList
 
 
 def containment_check_list(thelist: List[int], number: int) -> bool:
     """Determine if a value is contained in the list."""
-    # TODO: assume that the value is not inside of the list
-    # TODO: the value is, in fact, inside of the list
-    # so this function should return True
-    # TODO: return bool to indicate whether or not value is found
-    # NOTE: Make sure that you use the "in" operator for this function
+    # assume that the value is not inside of the list
+    isFound = False
+    # the value is, in fact, inside of the list so this function should return True
+    if number in thelist:
+        isFound = True
+    return isFound
 
 
 def containment_check_tuple(thetuple: Tuple[int], number: int) -> bool:
     """Determine if a value is contained in the tuple."""
-    # TODO: assume that the value is not inside of the tuple
-    # TODO: the value is, in fact, inside of the tuple
-    # so this function should return True
-    # TODO: return bool to indicate whether or not value is found
-    # NOTE: Make sure that you use the "in" operator for this function
-
+    # assume that the value is not inside of the tuple
+    isFound = False
+    # the value is, in fact, inside of the tuple so this function should return True
+    if number in thetuple:
+        isFound = True
+    return isFound
 
 def containment_check_set(thelist: List[int], number: int) -> bool:
     """Determine if a value is contained in the list."""
-    # NOTE: Conventional wisdom often suggests it is faster to:
+    # Conventional wisdom often suggests it is faster to:
     # - Convert a list to a set
     # - Search for a number in the set
     # ... than it is to search through a list
     # Reference to support this assertion:
     # https://docs.quantifiedcode.com/python-anti-patterns/performance/using_key_in_list_to_check_if_key_is_contained_in_a_list.html
-    # TODO: assume that the value is not inside of the tuple
-    found = False
-    # TODO: convert the list to a set
-    # TODO: the value is, in fact, inside of the set
-    # so this function should return True
-    # TODO: return bool to indicate whether or not value is found
-    # NOTE: Make sure that you use the "in" operator for this function
-
+    # convert the list to a set
+    setList = set(thelist)
+    # assume that the value is not inside of the list
+    isFound = False
+    # the value is, in fact, inside of the set so this function should return True
+    if number in setList:
+        isFound = True
+    return isFound
 
 def calculate_average_values(data_list: List[float], data_count: int) -> List[float]:
     """Calculate the average values for the data in the provided list."""
