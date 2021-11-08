@@ -33,11 +33,12 @@ def human_readable_boolean(answer: bool) -> str:
     """Produce a human-readable Yes or No for a boolean value of True or False."""
     # return "Yes" when the provided answer is True
     if answer is True:
-        strAnswer =  "Yes"
+        strAnswer = "Yes"
     # return "No" when the provided answer is False
     elif answer is False:
-        strAnswer =  "No"
+        strAnswer = "No"
     return strAnswer
+
 
 def generate_random_number(maximum: int, exceed: bool = False) -> int:
     """Generate a random number defined by the maximum."""
