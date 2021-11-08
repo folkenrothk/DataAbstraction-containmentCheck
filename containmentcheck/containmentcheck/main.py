@@ -22,11 +22,11 @@ console = Console()
 
 class ContainmentCheckApproach(str, Enum):
     """Define the name for the approach for performing containment checking of structured types."""
+
     # define the three different approaches for containment checking
     list = "list"
     tuple = "tuple"
     set = "set"
-
 
 
 def human_readable_boolean(answer: bool) -> str:
@@ -53,6 +53,7 @@ def generate_random_number(maximum: int, exceed: bool = False) -> int:
     else:
         return randomNumber
 
+
 def generate_random_container(
     size: int,
     maximum: int,
@@ -68,7 +69,7 @@ def generate_random_container(
     if make_tuple is True:
         return tuple(randomList)
     # return the randomly generated container of values
-    else: 
+    else:
         return randomList
 
 
@@ -91,6 +92,7 @@ def containment_check_tuple(thetuple: Tuple[int], number: int) -> bool:
         isFound = True
     return isFound
 
+
 def containment_check_set(thelist: List[int], number: int) -> bool:
     """Determine if a value is contained in the list."""
     # Conventional wisdom often suggests it is faster to:
@@ -107,6 +109,7 @@ def containment_check_set(thelist: List[int], number: int) -> bool:
     if number in setList:
         isFound = True
     return isFound
+
 
 def calculate_average_values(data_list: List[float], data_count: int) -> List[float]:
     """Calculate the average values for the data in the provided list."""
