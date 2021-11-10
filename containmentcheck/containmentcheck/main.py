@@ -40,7 +40,7 @@ def human_readable_boolean(answer: bool) -> str:
     return strAnswer
 
 
-def generate_random_number(maximum: int, exceed: bool = False) -> int:
+def generate_random_number(maximum: int, exceed: bool = True) -> int:
     """Generate a random number defined by the maximum."""
     # start with a random value that is one greater
     # than the maximum, which is helpful when benchmarking
