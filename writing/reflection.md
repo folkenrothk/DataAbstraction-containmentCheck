@@ -106,7 +106,7 @@ For the first research question, there were three varying sizes of containers. T
 
 For the second research question, this was constructed very similarly to the first research question. The data container types, sizes, and maximum value are the same as the first question for the same reasonings. This questions then builds on the first by searching for a value within the container. This is seen by the exceed parameter as not being fulfilled. This then causes a random number to be generated and searched for within the container.
 
-Lastly, the third question was constructed to look at the changes caused by a small or large maximum value specified. Since this question only has two options for a changing variable, I only ran each data container type twice. Each of these runs had the item that was being searched for exceed the maximum value so that the program would have to iterate through the complete data container. I chose to have the size of the container remain constant at the size of 200000000 as that was the middle size of other trials.
+Lastly, the third question was constructed to look at the changes caused by a small or large maximum value specified. Since this question only has two options for a changing variable, I only ran each data container type twice. Each of these runs had the item that was being searched for exceed the maximum value so that the program would have to iterate through the complete data container. I chose to have the size of the container remain constant at the size of 50000000 as that was the smallest size of other trials.
 
 ## Research Questions
 
@@ -119,7 +119,8 @@ RQ3. When the value exceeds the container maximum and using the `in` operator fo
 
 ## Data Tables
 
-* **RQ1 Data**
+**RQ1 Data**
+
 | Run Number | Approach | Container Size | Maximum Value | Exceed? | Number Generated | Average Time |
 | ---------- | -------- | -------------- | ------------- | ------- | ---------------- | ------------ |
 | 1 | List  | 50000000  | 50000000 | Yes | 5000001 | 0.7330810300000003 |
@@ -132,7 +133,8 @@ RQ3. When the value exceeds the container maximum and using the `in` operator fo
 | 8 | Set   | 100000000 | 50000000 | Yes | 5000001 | 21.63500049666667  |
 | 9 | Set   | 200000000 | 50000000 | Yes | 5000001 | 48.51392534666667  |
 
-* **RQ2 Data**
+**RQ2 Data**
+
 | Run Number | Approach | Container Size | Maximum Value | Exceed? | Number Generated | Average Time |
 | ---------- | -------- | -------------- | ------------- | ------- | ---------------- | ------------ |
 | 1 | List  | 50000000  | 50000000 | No | 4952099  | 0.1673123899966667 |
@@ -145,7 +147,8 @@ RQ3. When the value exceeds the container maximum and using the `in` operator fo
 | 8 | Set   | 100000000 | 50000000 | No | 2067991  | 21.93860423999997  |
 | 9 | Set   | 200000000 | 50000000 | No | 21588813 | 47.51411206666633  |
 
-* **RQ3 Data**
+**RQ3 Data**
+
 | Run Number | Approach | Container Size | Maximum Value | Exceed? | Number Generated | Average Time |
 | ---------- | -------- | -------------- | ------------- | ------- | ---------------- | ------------ |
 | 1 | List  | 50000000 | 500000000  | Yes | 500000001  | 0.7149419066666665 |
