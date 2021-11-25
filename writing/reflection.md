@@ -6,7 +6,7 @@
 
 ### Report at least five examples of program output to demonstrate that your `containmentcheck` program works correctly
 
-Below are examples of the output from running the `containmentcheck` program. In each section, the output is labeled with the relevant research question (the parameter choices are described thoroughly in the [Experiment Design](#Experiment_Design) below), the number of run (refer to the [data tables](#Data_Tables) below each respective question), the command inputted to the terminal, and the subsequent output.
+Below are examples of the output from running the `containmentcheck` program. In each section, the output is labeled with the relevant research question (the parameter choices are described thoroughly in the [Experiment Design](#Experiment-Design) section below), the number of run (refer to the [data tables](#Data-Tables) below each respective question), the command inputted to the terminal, and the subsequent output.
 
 #### 1. Output from running the `containmentcheck` program
 
