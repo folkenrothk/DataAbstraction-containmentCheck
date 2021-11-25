@@ -175,7 +175,7 @@ def containmentcheck(
     console.print(
         f"\t Should the value to search for exceed the maximum number? {human_readable_boolean(exceed)}"
     )
-    console.print(f"The random number generated is: {random_number}")
+    console.print(f"\t The random number generated is: {random_number}")
     console.print()
     # conduct a doubling experiment for containment checking with the list data structure
     if approach.value == ContainmentCheckApproach.list:
