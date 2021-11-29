@@ -11,6 +11,7 @@ Below are examples of the output from running the `containmentcheck` program. In
 #### 1. Output from running the `containmentcheck` program
 
 RQ 1. *Run 1*
+
 `poetry run containmentcheck --approach list --size 50000000 --maximum 5000000 --exceed`
 
 ```
@@ -29,6 +30,7 @@ RQ 1. *Run 1*
 #### 2. Output from running the `containmentcheck` program
 
 RQ 1. *Run 4*
+
 `poetry run containmentcheck --approach tuple --size 50000000 --maximum 50000000 --exceed`
 
 ```
@@ -47,6 +49,7 @@ RQ 1. *Run 4*
 #### 3. Output from running the `containmentcheck` program
 
 RQ 2. *Run 2*
+
 `poetry run containmentcheck --approach list --size 100000000 --maximum 50000000`
 
 ```
@@ -65,6 +68,7 @@ RQ 2. *Run 2*
 #### 4. Output from running the `containmentcheck` program
 
 RQ 2. *Run 5*
+
 `poetry run containmentcheck --approach tuple --size 100000000 --maximum 50000000`
 
 ```
@@ -83,6 +87,7 @@ RQ 2. *Run 5*
 #### 5. Output from running the `containmentcheck` program
 
 RQ 3. *Run 1*
+
 `poetry run containmentcheck --approach list --size 50000000 --maximum 500000000 --exceed`
 
 ```
@@ -110,11 +115,11 @@ Lastly, the third question was constructed to look at the changes caused by a sm
 
 ## Research Questions
 
-RQ1. When the value exceeds the container maximum and using the `in` operator for containment checking, which data container has the least time overhead at varying sizes (1 million, 2 million, 4 million)?
+RQ1. When the value exceeds the container maximum and using the `in` operator for containment checking, which data container has the least time overhead at varying sizes (50000000, 100000000, 200000000)?
 
-RQ2. When the value does not exceed the container maximum and using the `in` operator for containment checking, which data container has the least time overhead at varying sizes (1 million, 2 million, 4 million)?
+RQ2. When the value does not exceed the container maximum and using the `in` operator for containment checking, which data container has the least time overhead at varying sizes (50000000, 100000000, 200000000)?
 
-RQ3. When the value exceeds the container maximum and using the `in` operator for containment checking, do all of the containers have the least time overhead with a maximum value of 500,000,000 or a maximum value of 1,000,000,000 million?
+RQ3. When the value exceeds the container maximum and using the `in` operator for containment checking, do all of the containers have the least time overhead with a maximum value of 500000000 or a maximum value of 1000000000 million?
 
 
 ## Data Tables
@@ -208,8 +213,8 @@ The most challenging part about designing an experiment to evaluate an algorithm
 
 ### Why is it necessary to perform both an analytical and an empirical evaluation of an algorithm?
 
-//
+It is necessary to perform both analytical and empirical evaluations of an algorithm because they test different parts of algorithm. The analytical evalution looks at the quality and complexity of the code. This one is just analyzing the source code. Empirical evalutions use the algorithm with actual inputs. This type of evalution allows for us to excute the code and record values like runtime or space used. Doing both allows us to get a fuller picture of the algorithms we are evaluating.
 
 ### How do the empirical results suggest that you don't yet know the entire story about the performance of containment checking?
 
-//
+These empirical results suggest we do not yet know the entire story about containment checking because we saw that sets were the slowest throughout all of the runs. From other sources we discussed in class, sets are supposed to be the fastest. When looking at the source code through an analytical approach we can tell that the set function is actually working wiht a list that is then turned into a set. This operation is so slow that the quickness of working with the set does not outweigh the cost of making the data a set. In practice, the set is not fast enough to make up for the other necessary time costs.
