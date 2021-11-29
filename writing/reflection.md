@@ -119,7 +119,7 @@ RQ1. When the value exceeds the container maximum and using the `in` operator fo
 
 RQ2. When the value does not exceed the container maximum and using the `in` operator for containment checking, which data container has the least time overhead at varying sizes (50000000, 100000000, 200000000)?
 
-RQ3. When the value exceeds the container maximum and using the `in` operator for containment checking, do all of the containers have the least time overhead with a maximum value of 500000000 or a maximum value of 1000000000 million?
+RQ3. When the value exceeds the container maximum and using the `in` operator for containment checking, do all of the containers have the least time overhead with a maximum value of 500000000 or a maximum value of 1000000000?
 
 
 ## Data Tables
@@ -168,27 +168,17 @@ RQ3. When the value exceeds the container maximum and using the `in` operator fo
 
 ### Empirical Evaluation
 
-TODO: Provide at least three paragraphs that explain which containment checking
-algorithm is fastest, by how much it is faster, and how you knew that it was
-faster, referencing the data in the aforementioned command outputs and the data
-tables to support your response. You should make sure that you answer each of
-the at least three research questions that you posed in a previous section.
+After completing the trials for this experiment and reviewing the results, there is some interesting trends across the questions. The first research question seemed to control for more variables in comparison to the second research question due to the exceed tag. The runs for the first research question assured that all of the containers would have to iterate all the way through. The second question allowed for the possiblity for the algorithm to find the item it was searching for and exit earlier. This has still pulled interesting results as the findings were still generally similar between the two runs. The third question also interestingly supported the following findings.
 
-TODO: Make sure that your responses explain WHY certain configurations are faster!
-TODO: It is not sufficient to ONLY explain WHICH configuration is faster!
+Overall, I would claim that the set, by far, was the slowest in this evalution. Looking at the data collected from the experimental runs, the tuple was 91.58% faster than the set and the list was 91.31% faster than the set at the smallest container size. This gap only increased as the container size increased. At the middle size, the list was 93.26% faster, and the tuple was 93.12% faster than the set. At the largest size tested, the tuple was 94.28% faster than the set, and the list was 90.25% faster than the set. This makes sense as the code in the set is actually converting a list into a set. I believe this is what caused such a dramatic difference between these algorithms.
 
-//TODO
+
+When looking at the fastest, I would have to claim that the tuple was the fastest due to the data collected from this experiment. At the smallest and middle size containers, the list and tuple went back and forth of which was faster at very small percentages. At the smallest size, the uple was 03.07% faster than the list. However, the list was 2.00% faster than the tuple. The claim is swayed by the data collected with the largest size where the tuple was 41.41% faster than the list. The third research question also highlighted this event as the tuple or list were not always faster than its counterpart. I would ideally suggest rerunning these trials a couple times to confirm this finding before concluding officially. 
+
 
 ### Analytical Evaluation
 
-TODO: Using the provided source code for the different containment check
-algorithms, your textbook, your experimental results, and any relevant online
-resources that you cite in this reflection, define the worst-case time
-complexity, using the big-O notation, for the three containment check
-algorithms called `containment_check_tuple`, `containment_check_list`, and
-`containment_check_set`. You should justify why you picked that complexity.
-
-//TODO
+The worst-case time complexity for the three containment check algorithms were all O(n), also reffered to as linear. I know this from the doubling experiment I conducted. When using the data from the runs for the first research question, I recieved a doubling ratio of   1.9886098675885793 for the list runs (calculated from run 1 & 2), 2.0937188128190143 for the tuple runs (calculated from run 4 & 5), and 2.5643942875545482 for the set runs (calculated from run 7 & 8). All of these ratios are about 2 which suggests the linear worse-case time complexity. This can also be evaluted by looking at the source code and counting the operators which all also suggest O(n).
 
 ## Source Code
 
@@ -209,7 +199,6 @@ This section of python source code begins by initalizing two variables. The firs
 ### What is challenging about designing an experiment to evaluate an algorithm's performance?
 
 The most challenging part about designing an experiment to evaluate an algorithm's performance is having a full enough understanding of the program. Having a decent understanding of the code you are using is critical in creating logical research questions. However, understanding a program completely leads to many experimental questions seemingly pointless to ask. This balance is important to conducting a worthwhile experiment and often requires a recursive process of developing research questions. 
-
 
 ### Why is it necessary to perform both an analytical and an empirical evaluation of an algorithm?
 

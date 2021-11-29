@@ -54,6 +54,7 @@ def generate_random_number(maximum: int, exceed: bool = True) -> int:
     else:
         return randomNumber
 
+
 def generate_random_container(
     size: int,
     maximum: int,
