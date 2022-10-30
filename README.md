@@ -1,11 +1,8 @@
-# Containment Checking
+# `Cmpsc 101` Data Abstraction: Containment Checking
+  _Completed Fall 2021_
 
-## Assigned: Thursday, November 4, 2021
-## Due: Thursday, November 11, 2021
+## Project Instructions
 
-After cloning this repository to your computer, please take the following steps:
-
-- Follow the instructions on the Proactive Programmers web site for this project
 - Use the `cd` command to change into the directory for this repository
 - Change into the program directory by typing `cd containmentcheck`
 - Install the dependencies for the project by typing `poetry install`
@@ -15,6 +12,8 @@ After cloning this repository to your computer, please take the following steps:
   - Note that the program will not work unless you add the required source code
   - Refer to the `writing/reflection.md` for details about designing your experiment
 - Confirm that the program is producing acceptable experimental output
-- Use a `docker run` command for your operating system to run GatorGrader
-- Please be aware that performance profiling in a Docker contain may not work as expected
 - Provide all of the required responses in the `writing/reflection.md` file
+
+## Findings
+
+Please refer to [the final report](./writing/report.md) for the experimental design and findings.
