@@ -1,6 +1,6 @@
 # Containment Checking
 
-## Kate Folkenroth
+### Kate Folkenroth
 
 ## Program Output
 
